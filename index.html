@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Ujian · Kelas 7</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="w">
+
+  <!-- ============ LOGIN ============ -->
+  <div id="lg">
+    <div class="br">
+      <div class="lg">U</div>
+      <h1>Ujian Online</h1>
+      <p>Kelas 7 · SMP</p>
+    </div>
+    <div class="f">
+      <label>Nama Lengkap</label>
+      <input id="nn" placeholder="Tulis nama lengkap" autocomplete="off">
+    </div>
+    <div class="f">
+      <label>Kelas</label>
+      <select id="kk">
+        <option value="">— Pilih Kelas —</option>
+        <option>7A</option><option>7B</option><option>7C</option>
+        <option>7D</option><option>7E</option><option>7F</option>
+      </select>
+    </div>
+    <div class="f">
+      <label>Mata Pelajaran</label>
+      <select id="ss">
+        <option value="">— Pilih Pelajaran —</option>
+        <option value="matematika">Matematika</option>
+        <option value="ipa">IPA</option>
+        <option value="ips">IPS</option>
+        <option value="bahasa">Bahasa Indonesia</option>
+      </select>
+    </div>
+    <button class="b bp" onclick="go()">MULAI UJIAN</button>
+    <div class="er" id="er"></div>
+  </div>
+
+  <!-- ============ QUIZ ============ -->
+  <div id="qz">
+    <div class="tb">
+      <div style="min-width:0">
+        <div class="nm" id="qn">—</div>
+        <div class="sb" id="qs">—</div>
+      </div>
+      <div class="tm" id="tm">30:00</div>
+    </div>
+    <div class="pg"><i id="pg"></i></div>
+    <div class="qc">
+      <div class="qn" id="qi">Soal 1 / 30</div>
+      <div class="qt" id="qq">—</div>
+      <div id="qo"></div>
+    </div>
+    <div class="nv">
+      <button class="b bg" id="bp" onclick="mv(-1)">← Sebelumnya</button>
+      <button class="b bp" id="bn" onclick="mv(1)">Selanjutnya →</button>
+    </div>
+  </div>
+
+  <!-- ============ RESULT ============ -->
+  <div id="rs">
+    <div class="sc" id="sc">
+      <div class="n" id="sn">0</div>
+      <div class="l">Nilai Kamu</div>
+      <div style="font-size:16px;font-weight:800;margin-top:4px" id="sg">—</div>
+    </div>
+    <div class="rm">
+      <div><div class="v" id="rc">0</div><div class="k">Benar</div></div>
+      <div><div class="v" id="rw">0</div><div class="k">Salah</div></div>
+      <div><div class="v" id="rt">30</div><div class="k">Total</div></div>
+    </div>
+    <h3 style="font-size:13px;color:var(--mu);margin-bottom:12px">PEMBAHASAN</h3>
+    <div id="rv"></div>
+    <button class="b bg" style="margin-top:16px" onclick="location.reload()">Ulangi Ujian</button>
+  </div>
+
+</div>
+
+<!-- ============ BLINK OVERLAY ============ -->
+<div id="bk">
+  <div class="i">⚠️</div>
+  <div class="t">KELUAR DARI UJIAN?</div>
+  <div class="s">Progres kamu akan hilang</div>
+</div>
+
+<script src="soal.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
