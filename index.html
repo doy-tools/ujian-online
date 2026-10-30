@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Ujian · Kelas 7</title>
+<title>Ujian Online · Kelas 7</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,10 +16,12 @@
       <h1>Ujian Online</h1>
       <p>Kelas 7 · SMP</p>
     </div>
+    
     <div class="f">
       <label>Nama Lengkap</label>
       <input id="nn" placeholder="Tulis nama lengkap" autocomplete="off">
     </div>
+    
     <div class="f">
       <label>Kelas</label>
       <select id="kk">
@@ -28,6 +30,7 @@
         <option>7D</option><option>7E</option><option>7F</option>
       </select>
     </div>
+    
     <div class="f">
       <label>Mata Pelajaran</label>
       <select id="ss">
@@ -38,12 +41,14 @@
         <option value="bahasa">Bahasa Indonesia</option>
       </select>
     </div>
+    
     <button class="b bp" onclick="go()">MULAI UJIAN</button>
     <div class="er" id="er"></div>
   </div>
 
   <!-- ============ QUIZ ============ -->
   <div id="qz">
+    <!-- Topbar -->
     <div class="tb">
       <div style="min-width:0">
         <div class="nm" id="qn">—</div>
@@ -51,12 +56,18 @@
       </div>
       <div class="tm" id="tm">30:00</div>
     </div>
+    
+    <!-- Progress -->
     <div class="pg"><i id="pg"></i></div>
+    
+    <!-- Question Card -->
     <div class="qc">
       <div class="qn" id="qi">Soal 1 / 30</div>
       <div class="qt" id="qq">—</div>
       <div id="qo"></div>
     </div>
+    
+    <!-- Navigation -->
     <div class="nv">
       <button class="b bg" id="bp" onclick="mv(-1)">← Sebelumnya</button>
       <button class="b bp" id="bn" onclick="mv(1)">Selanjutnya →</button>
@@ -65,19 +76,29 @@
 
   <!-- ============ RESULT ============ -->
   <div id="rs">
+    <!-- Score Box -->
     <div class="sc" id="sc">
       <div class="n" id="sn">0</div>
       <div class="l">Nilai Kamu</div>
-      <div style="font-size:16px;font-weight:800;margin-top:4px" id="sg">—</div>
+      <div style="font-size:16px;font-weight:800;margin-top:8px;position:relative" id="sg">—</div>
     </div>
+    
+    <!-- Meta -->
     <div class="rm">
       <div><div class="v" id="rc">0</div><div class="k">Benar</div></div>
       <div><div class="v" id="rw">0</div><div class="k">Salah</div></div>
       <div><div class="v" id="rt">30</div><div class="k">Total</div></div>
     </div>
-    <h3 style="font-size:13px;color:var(--mu);margin-bottom:12px">PEMBAHASAN</h3>
+    
+    <!-- Review -->
+    <h3 style="font-size:14px;color:var(--mu);margin-bottom:14px;letter-spacing:1px;text-transform:uppercase;font-weight:800">Pembahasan</h3>
     <div id="rv"></div>
-    <button class="b bg" style="margin-top:16px" onclick="location.reload()">Ulangi Ujian</button>
+    
+    <!-- Actions -->
+    <div style="display:flex;gap:10px;margin-top:20px;">
+      <button class="b bg" onclick="location.reload()">Ulangi Ujian</button>
+      <button class="b bp" id="btn-export" onclick="exportResult()">⬇ Simpan Hasil</button>
+    </div>
   </div>
 
 </div>
